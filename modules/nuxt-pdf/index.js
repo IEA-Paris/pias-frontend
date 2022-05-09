@@ -1,4 +1,4 @@
-/* This module is originally bases on a work licenced as follows
+/* This module is originally based on a work licenced as follows
 ================
 The MIT License (MIT)
 
@@ -22,8 +22,11 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ===============
+
+MODIFIED BY ANTOINE CORDELOIS
  */
 
+import fsExtra from 'fs-extra'
 const fs = require('fs')
 const path = require('path')
 
@@ -101,6 +104,12 @@ module.exports = async function PDF(moduleOptions) {
     for (const locale of i18n.options.locales) {
       if ('domain' in locale && 'code' in locale) {
         i18n.domains[locale.code] = locale.domain
+        const folderPath = path.resolve('content/pdfs/' + locale.code + '/')
+        if (!fs.existsSync(folderPath)) {
+          fs.mkdirSync(folderPath, { recursive: true })
+        } else {
+          fsExtra.emptyDirSync(folderPath)
+        }
       }
     }
   }
