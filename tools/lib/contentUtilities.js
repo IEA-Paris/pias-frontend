@@ -2,11 +2,11 @@ import path from 'path'
 import fs from 'fs'
 import { dump } from 'js-yaml'
 import fsExtra from 'fs-extra'
-import { Repository, Tree, Diff } from 'nodegit'
+/* import { Repository, Tree, Diff } from 'nodegit' */
 import slugify from '../../assets/utils/slugify'
 import { formatAuthors } from '../../assets/utils/transforms'
 
-export const getStagedChanges = async () => {
+/* export const getStagedChanges = async () => {
   const emptyTree = '4b825dc642cb6eb9a060e54bf8d69288fbee4904'
   const repo = await Repository.open(path.resolve('./.git'))
 
@@ -17,7 +17,7 @@ export const getStagedChanges = async () => {
   const tree = await (head ? head.getTree() : Tree.lookup(repo, emptyTree))
   const diff = await Diff.treeToIndex(repo, tree, null)
   const patches = await diff.patches()
-  /*   console.log(patches.map((patch) => patch.newFile().path())) */
+  /*   console.log(patches.map((patch) => patch.newFile().path())) 
 }
 async function print() {
   const repo = await Repository.open(path.resolve('./.git'))
@@ -35,11 +35,11 @@ async function print() {
         hunks.forEach((hunk) => {
           hunk.lines().then((lines) => {
             /*        console.log('diff', patch.oldFile().path(), patch.newFile().path())
-            console.log(hunk.header().trim()) */
+            console.log(hunk.header().trim()) 
             lines.forEach((line) => {
               /*      console.log(
                 String.fromCharCode(line.origin()) + line.content().trim()
-              ) */
+              ) 
             })
           })
         })
@@ -51,6 +51,7 @@ async function print() {
 }
 
 print().catch((err) => console.error(err))
+*/
 /**
  * Performs a deep merge of objects and returns new object. Does not modify
  * objects (immutable) and merges arrays via concatenation.

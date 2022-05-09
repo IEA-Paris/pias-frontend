@@ -9,10 +9,10 @@
   >
     <div class="d-flex flex-grow-1 justify-space-between">
       <Logo class="" />
-      <!-- <LanguageSwitcher /> -->
       <div class="d-flex flex-column justify-space-between">
         <div class="text-right">
-          <SearchMenu />
+          <!--         <SearchMenu /> -->
+          <LanguageSwitcher />
           <MainMenu />
         </div>
 
@@ -21,10 +21,27 @@
           class="d-flex menu"
           transition="v-expand-transition"
         >
-          <v-btn text nuxt :to="localePath('/')">{{ $t('articles') }}</v-btn>
-          <v-btn text nuxt :to="localePath('/media')">{{ $t('media') }}</v-btn>
-          <v-btn text nuxt :to="localePath('/authors')">
-            {{ $t('authors') }}
+          <v-btn
+            text
+            nuxt
+            :to="localePath('/')"
+            @click="handleClick('about')"
+            >{{ $t('about') }}</v-btn
+          >
+          <v-btn
+            text
+            nuxt
+            :to="localePath('/archlab')"
+            @click="handleClick('archlab')"
+            >{{ $t('archlab') }}</v-btn
+          >
+          <v-btn
+            text
+            nuxt
+            :to="localePath('/proceedings')"
+            @click="handleClick('proceedings')"
+          >
+            {{ $t('proceedings') }}
           </v-btn>
         </div>
       </div>
@@ -43,6 +60,13 @@ export default {
   },
   computed: {},
   mounted() {},
+  methods: {
+    handleClick(type) {
+      if (this.$route.name.startsWith(type)) {
+        this.$store.dispatch('resetState', type)
+      }
+    },
+  },
 }
 </script>
 <style lang="scss">
