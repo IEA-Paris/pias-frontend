@@ -10,13 +10,15 @@ on:
 
   push:
     branches:
-      - main
       - master
+      - develop
+
     paths:
       - 'infra/**'
       - '.github/workflows/infra.yml'
 
 env:
+  ENV: ${{ github.ref == 'refs/heads/master' && 'prod' || 'dev' }}
   AWS_REGION: 'eu-west-3' # paris
 
 jobs:

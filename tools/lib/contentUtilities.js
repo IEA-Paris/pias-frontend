@@ -199,6 +199,10 @@ export const insertDocuments = (data, cat, filenameFlag) => {
     )
     const fileName = slugify(doc[filenameFlag].trim()) + '.md'
 
+    console.log(
+      'WRITE : ',
+      './content/' + cat + '/' + fileName[0] + '/' + fileName
+    )
     fs.writeFileSync(
       './content/' + cat + '/' + fileName[0] + '/' + fileName,
       `---
