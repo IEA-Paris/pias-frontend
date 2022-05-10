@@ -1,7 +1,6 @@
 import colors from 'vuetify/es5/util/colors'
 
 export default {
-  env: { NODE_ENV: 'dev' },
   name: 'PIAS',
   full_name: 'Proceedings of the Paris Institute for Advanced Study', // set to false if there is none
   subtitle: 'Open source publishing platform for open science.',
@@ -52,7 +51,7 @@ export default {
     speed: 0.05,
   },
   theme: {
-    loading: red,
+    loading: '#2196f3',
     dark: false,
     themes: {
       light: {
@@ -77,7 +76,7 @@ export default {
   },
   modules: {
     sentry: {
-      dsn: 'https://99ea2f822861419f86c278964ceeffbc@sentry.paris-ias.io/11',
+      dsn: 'https://2a9292f15cb34309a23d0e25caa2ead4@sentry.paris-ias.io/14',
     },
     ackee: {
       domain: 'e4284059-0038-4c3a-aa5b-de83db391c0a',
