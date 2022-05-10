@@ -1,0 +1,113 @@
+<template>
+  <v-card
+    nuxt
+    :to="localePath('/articles/' + item.slug)"
+    class="d-flex my-6"
+    flat
+    @click="$emit('close')"
+  >
+    <div class="list-image d-flex">
+      <YoutubeThumbnail v-if="item.yt && item.yt.length" :item="item">
+        <template #categories>
+          <ArticleCategories :item="item" />
+        </template>
+        <template #date>
+          <div class="d-flex">
+            <v-sheet :color="item.category_1.color" class="sideline"></v-sheet>
+            {{
+              new Date(item.date).toLocaleDateString('EN', {
+                timezone: 'UTC',
+              })
+            }}
+          </div>
+        </template>
+      </YoutubeThumbnail>
+      <PictureItem
+        v-else-if="item.picture && item.picture.length"
+        :item="item"
+        :src="item.picture"
+      >
+        <template #categories>
+          <ArticleCategories :item="item" />
+        </template>
+        <template #date>
+          <div class="d-flex">
+            <v-sheet :color="item.category_1.color" class="sideline"></v-sheet>
+            {{
+              new Date(item.date).toLocaleDateString('EN', {
+                timezone: 'UTC',
+              })
+            }}
+          </div>
+        </template>
+      </PictureItem>
+      <TextFingerprint v-else :item="item" :size="200" :margin="20">
+        <template #categories>
+          <ArticleCategories :item="item" />
+        </template>
+        <template #date>
+          <div class="d-flex">
+            <v-sheet :color="item.category_1.color" class="sideline"></v-sheet>
+            {{
+              new Date(item.date).toLocaleDateString('EN', {
+                timezone: 'UTC',
+              })
+            }}
+          </div>
+        </template>
+      </TextFingerprint>
+    </div>
+    <div class="ml-6 my-3 d-flex">
+      <div>
+        <v-tooltip bottom>
+          <template #activator="{ on, attrs }">
+            <div class="article-title" v-bind="attrs" v-on="on">
+              {{ item.article_title }}
+            </div>
+          </template>
+          <span v-html="item.article_title"></span>
+        </v-tooltip>
+        <ArticleAuthorsString :authors="item.authors" class="text-h6 mt-3" />
+      </div>
+      <v-divider vertical class="mx-6"></v-divider>
+      <div>
+        {{ item.abstract }}
+        <v-btn tile x-large>Read more</v-btn>
+      </div>
+    </div>
+    <br />
+    <v-divider></v-divider>
+  </v-card>
+</template>
+<script>
+export default {
+  props: {
+    item: {
+      required: true,
+      type: Object,
+    },
+  },
+  data() {
+    return {}
+  },
+  computed: {},
+  mounted() {},
+  methods: {},
+}
+</script>
+<style lang="scss">
+.list-image {
+  display: flex;
+  min-width: 25%;
+  background-color: black;
+}
+.article-title {
+  font-size: 1.3rem !important;
+  display: -webkit-box;
+  min-width: 200px;
+  max-width: 350px;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+</style>
