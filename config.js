@@ -77,7 +77,7 @@ export default {
   },
   modules: {
     sentry: {
-      dsn: 'https://99ea2f822861419f86c278964ceeffbc@sentry.paris-ias.io/11',
+      dsn: 'https://2a9292f15cb34309a23d0e25caa2ead4@sentry.paris-ias.io/14',
     },
     ackee: {
       domain: 'e4284059-0038-4c3a-aa5b-de83db391c0a',
