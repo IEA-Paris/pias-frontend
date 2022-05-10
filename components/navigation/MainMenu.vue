@@ -67,25 +67,25 @@
         <!-- MAIN MENU -->
         <v-col cols="12" md="4">
           <v-divider style="border-color: white"></v-divider>
-          <!-- HOME/ARTICLES -->
+          <!-- HOME -->
           <v-list dark color="black">
             <v-list-item :to="localePath('/')" @click="open = false">
               <v-list-item-title class="text-uppercase text-h5 mt-3 mb-6">
-                {{ $t('articles') }}
+                {{ $t('about-0') }}
               </v-list-item-title>
             </v-list-item>
             <v-divider></v-divider>
-            <!-- MEDIA -->
-            <v-list-item :to="localePath('/media')" @click="open = false">
+            <!-- LAB -->
+            <v-list-item :to="localePath('/archlab')" @click="open = false">
               <v-list-item-title class="text-uppercase text-h5 mt-3 mb-6">
-                {{ $t('media') }}
+                {{ $t('archlab') }}
               </v-list-item-title>
             </v-list-item>
             <v-divider></v-divider>
-            <!-- AUTHORS -->
-            <v-list-item :to="localePath('/authors')" @click="open = false">
+            <!-- PROCEEDINGS -->
+            <v-list-item :to="localePath('/proceedings')" @click="open = false">
               <v-list-item-title class="text-uppercase text-h5 mt-3 mb-6">
-                {{ $t('authors') }}
+                {{ $t('proceedings') }}
               </v-list-item-title>
             </v-list-item>
           </v-list>

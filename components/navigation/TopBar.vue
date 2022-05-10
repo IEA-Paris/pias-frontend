@@ -12,7 +12,7 @@
       <div class="d-flex flex-column justify-space-between">
         <div class="text-right">
           <!--         <SearchMenu /> -->
-          <LanguageSwitcher />
+          <!-- <LanguageSwitcher /> -->
           <MainMenu />
         </div>
 
