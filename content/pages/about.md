@@ -2,10 +2,12 @@
 page_title: about-us
 ---
 
-The Paris Institute for Advanced Study (IAS) is a transdisciplinary research center that welcomes researchers from all over the world in the fields of humanities and social sciences. It is also open to other disciplines, in particular the life sciences, for projects involving the humanities and social sciences, as well as to cross-sectoral research with actors from the administration or the economy, and citizens.
+**The Proceedings of the Institutes for Advanced Study (PIAS)** is a joint effort of several Institutes for Advanced Study to **publish** and **promote** their respective activities.
 
-The research projects carried out at the Institute, beyond their international aspect, are characterized by an interdisciplinary approach and the development of new methodologies and research axes. Projects mixing arts and sciences, transdisciplinary and intersectoral projects (sciences, politics, economy, society) are particularly encouraged.
+**PIAS** has been initated by **[Paris IAS](https://www.paris-iea.fr/en/)**. It is a archipelago of proceedings websites powered by **[publi.io](https://publi.io)**, a state-of-the-art, multilingual, free, open-source and easy to use platform that promotes open science.
 
-Each year, the Institute's residents and partner institutions organize about a hundred colloquia and conferences on its premises, on fundamental research topics or in response to major societal problems.
+This website has initially been designed to present PIAS to the community. We also added the **[archlab](/archlab)**, a little analytics experiment to draw a map of the current academic landcape in terms of fields, thematics and dissemination within the PIAS proceedings (and someday maybe at a larger scale, who knows?).
 
-These Proceedings of the Paris Institute for Advanced Study (PIAS) present the colloquia and conference cycles in the form of selective publications, often accompanied by videos or podcasts of the meetings.
+**PIAS** is based solely on open standards and goes by the [FAIR](https://www.go-fair.org/how-to-go-fair/) principles.
+
+You can browse our our proceedings [here](/proceedings). If you are representing an Institute for Advanced Study and PIAS is interesting to you, [contact us](/contact)!
