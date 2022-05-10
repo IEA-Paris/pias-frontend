@@ -33,7 +33,7 @@ jobs:
         uses: actions/checkout@master
       - name: 'AWS Creds [DEV]'
         if: env.ENV == 'dev'
-        uses: "aws-actions/configure-aws-credentials@v1"
+        uses: 'aws-actions/configure-aws-credentials@v1'
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID_DEV }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY_DEV }}
@@ -41,12 +41,12 @@ jobs:
 
       - name: 'AWS Creds [PROD]'
         if: env.ENV == 'prod'
-        uses: "aws-actions/configure-aws-credentials@v1"
+        uses: 'aws-actions/configure-aws-credentials@v1'
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ env.AWS_REGION }}
-  - name: Setup Terragrunt
+      - name: Setup Terragrunt
         uses: autero1/action-terragrunt@v0.1.0
         with:
           terragrunt_version: 0.35.12
