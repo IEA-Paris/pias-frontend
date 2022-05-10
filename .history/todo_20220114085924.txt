@@ -1,0 +1,7 @@
+- filters articles/media/authors
+- search items
+- rich text footnote
+- bibliography
+- prerendered text fingerprint svgs
+- 
+- 

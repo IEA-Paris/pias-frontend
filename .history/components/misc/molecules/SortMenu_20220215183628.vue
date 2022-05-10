@@ -1,0 +1,54 @@
+<template>
+  <v-menu>
+    <template #activator="{ on: menu, attrs }">
+      <v-tooltip bottom>
+        <template #activator="{ on: tooltip }">
+          <v-btn
+            x-large
+            tile
+            icon
+            v-bind="attrs"
+            v-on="{ ...tooltip, ...menu }"
+          >
+            <v-icon
+              >mdi-sort<!-- mdi-{{ ['', ''][('sort', 'views')].indexOf(type) }} --></v-icon
+            >
+          </v-btn>
+        </template>
+        <span>Latest {{ type }} first</span>
+      </v-tooltip>
+    </template>
+    <v-list>
+      <v-list-item v-for="(item, index) in items" :key="index">
+        <v-list-item-icon>
+          <v-icon>mdi-{{ item.icon }}</v-icon>
+        </v-list-item-icon>
+        <v-list-item-title
+          @click="sortBy = item.value[0]; sortDesc = item.value[1"
+          >{{ $t(item.text) }}</v-list-item-title
+        >
+      </v-list-item>
+    </v-list>
+  </v-menu>
+</template>
+<script>
+import lists from '~/assets/data/lists'
+export default {
+  props: {
+    type: {
+      type: String,
+      default: '',
+      required: true,
+    },
+  },
+  data() {
+    return {
+      items: lists[this.type].sort,
+    }
+  },
+  computed: {},
+  mounted() {},
+  methods: {},
+}
+</script>
+<style lang="scss"></style>

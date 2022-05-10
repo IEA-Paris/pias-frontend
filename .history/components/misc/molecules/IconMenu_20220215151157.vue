@@ -1,0 +1,49 @@
+<template>
+  <v-menu :value="$store.state[type].sortBy">
+    <template #activator="{ on: menu, attrs }">
+      <v-tooltip bottom>
+        <template #activator="{ on: tooltip }">
+          <v-btn icon v-bind="attrs" v-on="{ ...tooltip, ...menu }">
+            <v-icon
+              ><!-- mdi-{{ ['', ''][('sort', 'views')].indexOf(type) }} --></v-icon
+            >
+          </v-btn>
+        </template>
+        <span>Im A ToolTip</span>
+      </v-tooltip>
+    </template>
+    <v-list>
+      <v-list-item v-for="(item, index) in items" :key="index">
+        <v-list-item-title>{{ item.title }}</v-list-item-title>
+      </v-list-item>
+    </v-list>
+  </v-menu>
+</template>
+<script>
+import { sort, views } from '~/assets/data/lists'
+export default {
+  props: {
+    type: {
+      type: String,
+      default: '',
+      required: true,
+    },
+    menuType: {
+      type: String,
+      default: '',
+      required: true,
+    },
+  },
+  data() {
+    return {
+      items: this.type === 'sort' ? sort : views,
+    }
+  },
+  computed: {},
+  mounted() {
+    console.log('sort: ', sort)
+  },
+  methods: {},
+}
+</script>
+<style lang="scss"></style>
