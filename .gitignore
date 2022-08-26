@@ -107,5 +107,8 @@ static/pdfs
 content/authors/*
 content/media/*
 
+# that shouldn't be versionned
+static/sw.js
+
 #local history vscode plugin (aka life-saver)
 .history/

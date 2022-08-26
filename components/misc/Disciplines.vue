@@ -117,7 +117,7 @@ export default {
       .text(function (d) {
         return d.data.value ? d.data.value : '---'
       })
-      .on('mouseover', function (event, d) {
+    /*    .on('mouseover', function (event, d) {
         tooltip.html(
           d.data.value +
             (d.data?.description ? '<br> ' + d.data?.description : '')
@@ -131,7 +131,7 @@ export default {
       })
       .on('mouseout', function () {
         return tooltip.style('visibility', 'hidden')
-      })
+      }) */
     // .style("font-size", "")
     // .style("opacity", function(d) { return isOverflowed( d.parent ) ? 1 : 0; });
 

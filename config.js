@@ -3,9 +3,10 @@ import colors from 'vuetify/es5/util/colors'
 export default {
   env: { NODE_ENV: 'dev' },
   name: 'PIAS',
-  full_name: 'Proceedings of the Paris Institute for Advanced Study', // set to false if there is none
+  full_name: 'Proceedings of the Institutes for Advanced Study', // set to false if there is none
   subtitle: 'Open source publishing platform for open science.',
-  description: 'Open source publishing platform for open science.',
+  description:
+    'Proceedings of the Institutes for Advanced Study, made with an open source publishing platform for open science.',
   splash_title: 'Open source publishing platform for open science.',
   item_sg: 'Article',
   item_pl: 'Articles',
@@ -13,7 +14,8 @@ export default {
   graphqlEndpoint:
     'https://mz3e6z5nlngvdls3zh3possona.appsync-api.eu-west-2.amazonaws.com/graphql',
   graphqlApiKey: 'da2-eb5bkfhsvbdz3mexfykmkwjka4',
-  keywords: 'open source, open science, science, vuejs, nuxt, vuetify, vuex',
+  keywords:
+    'open source, open science, science, articles, issue, DOI, vuejs, nuxt, vuetify, vuex',
   url: 'https://pias.science',
   lang: {
     default: 'en',
