@@ -86,21 +86,21 @@ jobs:
               echo "No changes since last run"
           fi
 
-      - uses: "aws-actions/configure-aws-credentials@v1"
+      - uses: 'aws-actions/configure-aws-credentials@v1'
         with:
           aws-access-key-id: ${{ env.ENV == 'prod' && secrets.AWS_ACCESS_KEY_ID ||  secrets.AWS_ACCESS_KEY_ID_DEV }}
           aws-secret-access-key: ${{ env.ENV == 'prod' && secrets.AWS_SECRET_ACCESS_KEY || secrets.AWS_SECRET_ACCESS_KEY_DEV }}
           aws-region: ${{ env.AWS_REGION }}
 
-      - uses: "marvinpinto/action-inject-ssm-secrets@latest"
+      - uses: 'marvinpinto/action-inject-ssm-secrets@latest'
         with:
-          ssm_parameter: "/pias/cloudfront/id"
-          env_variable_name: "ssm_cloudfront_id"
+          ssm_parameter: '/pias/cloudfront/id'
+          env_variable_name: 'ssm_cloudfront_id'
 
-      - uses: "marvinpinto/action-inject-ssm-secrets@latest"
+      - uses: 'marvinpinto/action-inject-ssm-secrets@latest'
         with:
-          ssm_parameter: "/pias/s3/name"
-          env_variable_name: "ssm_s3_name"
+          ssm_parameter: '/pias/s3/name'
+          env_variable_name: 'ssm_s3_name'
 
       - name: Deploy to S3 🚀🚀🚀
         uses: jakejarvis/s3-sync-action@master
