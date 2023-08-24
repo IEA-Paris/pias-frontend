@@ -15,9 +15,6 @@
               v-on="{ ...tooltip, ...dialogStart }"
             >
               <v-icon>mdi-format-quote-close</v-icon>
-              <template v-if="text">
-                {{ $t('cite-or-export') }}
-              </template>
             </v-btn>
           </template>
           <span>{{ $t('cite-or-export-this-article') }}</span>

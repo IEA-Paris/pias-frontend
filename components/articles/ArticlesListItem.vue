@@ -120,9 +120,10 @@
             class="article-abstract"
             v-html="highlightWord(item.abstract)"
           ></div>
-          <v-btn class="mt-6 d-block" tile outlined>{{
-            $t('read-more')
-          }}</v-btn>
+          <div c>
+            <v-spacer></v-spacer>
+            <v-btn class="mt-6" tile outlined>{{ $t('read-more') }}</v-btn>
+          </div>
         </div>
       </div>
     </v-card>
